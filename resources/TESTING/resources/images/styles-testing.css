@@ -1,0 +1,10 @@
+.dropdown-menu {
+	width: 130px;
+	height: 195px;
+	background: url("images/dropdown-menu-black.png") no-repeat;
+	margin: 50px;
+}
+
+.dropdown-menu:hover {
+
+}

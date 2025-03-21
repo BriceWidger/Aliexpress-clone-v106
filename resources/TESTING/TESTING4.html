@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+
+</head>
+
+<body>
+
+  <div>
+    <p id="multiplied-subtotal">0.00</p>
+    <p id="cp-price-one">23.50</p>
+    <button id="p-one-icon-check-mark-empty_id" onclick="updateMultipliedSubtotal()">Click me</button>
+  </div>
+
+</body>
+<script>
+  function updateMultipliedSubtotal() {
+    const multipliedSubtotalElement = document.getElementById("multiplied-subtotal");
+    const priceOnceElement = document.getElementById("cp-price-one");
+    const multipliedSubtotal = parseFloat(multipliedSubtotalElement.textContent);
+    const priceOnce = parseFloat(priceOnceElement.textContent);
+    const newMultipliedSubtotal = multipliedSubtotal + priceOnce;
+    multipliedSubtotalElement.textContent = newMultipliedSubtotal.toFixed(2);
+  }
+</script>
+
+</html>

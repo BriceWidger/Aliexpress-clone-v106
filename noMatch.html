@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="resources/CSS/noMatch.css" />
+    <title>noMatch</title>
+</head>
+<!-- ^$\n -->
+
+<body>
+    <header>
+        <!-- NAV -->
+        <div class="upper-nav">
+            <div class="upper-nav-items-container">
+                <div class="name-logo-container">
+                    <a href="index.html" style="text-decoration:none">
+                        <div class="name-logo" href="beatsbydre.html">AliExpress</div>
+                    </a>
+                    <div class="dropdown-menu-background">
+                        <img class="dropdown-menu" src="resources/images/dropdown-menu-white.png" width="20"
+                            height="20" />
+                    </div>
+                </div>
+                <div id="search-bar-container">
+                    <input id="search-bar" type="text" onkeyup="search_items()"
+                        onblur="this.value=removeSpaces(this.value);" placeholder="Search items..">
+                    <div id="search-bar-filler"></div>
+                    <div id='search-list'>
+                        <div id="search-item-names" class="search-item-names">Automotive Degreaser</div>
+                        <a href="beatsbydre.html" target="_blank">
+                            <div id="search-item-names" class="search-item-names">Beats by Dre</div>
+                        </a>
+                        <div id="search-item-names" class="search-item-names">JBL Partybox</div>
+                        <div id="search-item-names" class="search-item-names">Makeup</div>
+                        <div id="search-item-names" class="search-item-names">Mr Potato Head</div>
+                        <div id="search-item-names" class="search-item-names">Olympus Camera</div>
+                        <div id="search-item-names" class="search-item-names">Pillow</div>
+                        <div id="search-item-names" class="search-item-names">RC Race Car</div>
+                        <div id="search-item-names" class="search-item-names">Simon Rabbit</div>
+                        <div id="search-item-names" class="search-item-names">Truth Hoodie</div>
+                    </div>
+                    <div id="search-submit-container"><input id="search-submit" type="image"
+                            src="resources/images/search-button.jpg" alt="Submit">
+                    </div>
+                </div>
+                <div class="header-items-container">
+                    <div class="person-icon-text-info">
+                        <img class="person-account-icon" src="resources/images/person-account-icon.png" />
+                        <h4>Account</h4>
+                    </div>
+                    <div class="cart-icon-text-checkout">
+                        <img class="cart-check-out-white" src="resources/images/check-out-cart-white.png" />
+                        <div class="cart-number-cart-text-wrap">
+                            <h4 id="cart-number">0</h4>
+                            <h4 class="cart-text">Cart</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="row-container-a">
+        <img src="https://ae01.alicdn.com/kf/S74ccf6c0ed414dbda8829764cf9c1bcbX/270x270.png" width="160" height="160"
+            data-spm-anchor-id="a2g0o.productlist.0.i4.1852ra8kra8k1L">
+        <div class="sorry-txt">Sorry, your search "" did not match any products. Please try again.</div>
+    </div>
+
+    <div class="above-footer">
+    </div>
+    <footer class="footer">
+        <div class="footer-sub">
+        </div>
+    </footer>
+    <div class="footer-black">
+    </div>
+    <!-- JS SCRIPT -->
+    <script src="resources/JS/index.js"></script>
+    <script src="resources/JS/noMatch.js"></script>
+</body>
+
+</html>

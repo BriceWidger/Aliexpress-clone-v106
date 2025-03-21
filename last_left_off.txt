@@ -1,0 +1,3 @@
+10/22/24:
+
+it looks like you finally have most of the javascript finished for the web site. now you should probably start looking at any css corrections before moving on to responsive web design
