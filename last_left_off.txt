@@ -1,5 +1,7 @@
-3/30/25:
+4/1/25:
 
-Spomething about having a different port other than Port: 5500 is not displaying the items in the carts. I think i tmay have to do with using different servers and localstorage
+I know why the image is not showing up when running the vercel app in shoppingcart for aliexpress-clone. It is because the ImgData key, for instance, is http://127.0.0.1:5500/resources/images/makeup-img-two.jpg.
 
-you might want to ask how ot get the server to open under whatever port/server/html i use on my local machine instead of the cercel.app port/server..... for instance: this is my local server: http://127.0.0.1:5500/Checkout_Pages/shoppingCart.html
+If I put a random image url from a website it'll show on the shopping cart.
+
+In other words, i need to figure out a way to change the imgData key so that the image key will run on vercel
