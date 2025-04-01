@@ -31,6 +31,7 @@ function loadImages() {
   var imgDataTenTemp = localStorage.getItem('imgDataTen_TEMP');
   var imgDataEleven = localStorage.getItem('imgDataEleven');
   var imgDataElevenTemp = localStorage.getItem('imgDataEleven_TEMP');
+  var imgDataRCCar = localStorage.getItem('imgDataRCCar');
 
   document.getElementById('cart-product-img-one').src = imgDataOne || imgDataOneTemp;
   document.getElementById('cart-product-img-two').src = imgDataTwo || imgDataTwoTemp;
@@ -43,4 +44,5 @@ function loadImages() {
   document.getElementById('cart-product-img-nine').src = imgDataNine || imgDataNineTemp;
   document.getElementById('cart-product-img-ten').src = imgDataTen || imgDataTenTemp;
   document.getElementById('cart-product-img-eleven').src = imgDataEleven || imgDataElevenTemp;
+  document.getElementById('cart-product-img-rccar').src = imgDataRCCar || 'default-image.jpg';
 }

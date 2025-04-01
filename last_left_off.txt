@@ -1,3 +1,5 @@
-10/22/24:
+3/30/25:
 
-it looks like you finally have most of the javascript finished for the web site. now you should probably start looking at any css corrections before moving on to responsive web design
+Spomething about having a different port other than Port: 5500 is not displaying the items in the carts. I think i tmay have to do with using different servers and localstorage
+
+you might want to ask how ot get the server to open under whatever port/server/html i use on my local machine instead of the cercel.app port/server..... for instance: this is my local server: http://127.0.0.1:5500/Checkout_Pages/shoppingCart.html
