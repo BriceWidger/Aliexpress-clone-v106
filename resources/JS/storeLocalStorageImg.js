@@ -117,9 +117,9 @@ function updateImagePotatoHead() {
     window.location.pathname.endsWith('mrPotatoHead_fiftyOff.html') ||
     window.location.pathname.endsWith('mrPotatoHead_underTwo.html') ||
     window.location.pathname.endsWith('mrPotatoHead_superDeals.html')) {
-    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatohead.jpg');
   } else {
-    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatohead.jpg');
   }
 }
 
@@ -131,7 +131,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('mrPotatoHead_underTwo.html') ||
     window.location.pathname.endsWith('mrPotatoHead_superDeals.html')) {
     localStorage.removeItem('imgDataFour');
-    localStorage.setItem('imgDataFour_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatohead.jpg');
   }
 });
 
@@ -201,9 +201,9 @@ function updateImageJBLspeaker() {
     window.location.pathname.endsWith('jblPartybox_fiftyOff.html') ||
     window.location.pathname.endsWith('jblPartybox_underTwo.html') ||
     window.location.pathname.endsWith('jblPartybox_superDeals.html')) {
-    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/JBLspeaker.jpg');
   } else {
-    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/JBLspeaker.jpg');
   }
 }
 
@@ -215,7 +215,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('jblPartybox_underTwo.html') ||
     window.location.pathname.endsWith('jblPartybox_superDeals.html')) {
     localStorage.removeItem('imgDataSeven');
-    localStorage.setItem('imgDataSeven_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/JBLspeaker.jpg');
   }
 });
 
@@ -257,9 +257,9 @@ function updateImageTruthHoodie() {
     window.location.pathname.endsWith('truthHoodie_fiftyOff.html') ||
     window.location.pathname.endsWith('truthHoodie_underTwo.html') ||
     window.location.pathname.endsWith('truthHoodie_superDeals.html')) {
-    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthhoodie.jpg');
   } else {
-    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthhoodie.jpg');
   }
 }
 
@@ -271,7 +271,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('truthHoodie_underTwo.html') ||
     window.location.pathname.endsWith('truthHoodie_superDeals.html')) {
     localStorage.removeItem('imgDataNine');
-    localStorage.setItem('imgDataNine_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthhoodie.jpg');
   }
 });
 
