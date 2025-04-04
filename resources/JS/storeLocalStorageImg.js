@@ -29,35 +29,25 @@ var preventUpdateImagePillow = false;
 function updateImagePillow() {
   if (preventUpdateImagePillow) return;
 
-  const imgData = {
-    local: 'http://127.0.0.1:5500/resources/images/pillow.jpg',
-    github: 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/pillow.jpg'
-  };
-
   if (window.location.pathname.endsWith('pillow.html') ||
     window.location.pathname.endsWith('pillow_fiftyOff.html') ||
     window.location.pathname.endsWith('pillow_underTwo.html') ||
     window.location.pathname.endsWith('pillow_superDeals.html')) {
-    localStorage.setItem('imgDataOne', JSON.stringify(imgData));
+    localStorage.setItem('imgDataOne', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/pillow.jpg');
   } else {
-    localStorage.setItem('imgDataOne', JSON.stringify(imgData));
+    localStorage.setItem('imgDataOne', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/pillow.jpg');
   }
 }
 
 document.getElementById('buy-now-wrap').addEventListener('click', function () {
   preventUpdateImagePillow = true;
 
-  const imgData = {
-    local: 'http://127.0.0.1:5500/resources/images/pillow.jpg',
-    github: 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/pillow.jpg'
-  };
-
   if (window.location.pathname.endsWith('pillow.html') ||
     window.location.pathname.endsWith('pillow_fiftyOff.html') ||
     window.location.pathname.endsWith('pillow_underTwo.html') ||
     window.location.pathname.endsWith('pillow_superDeals.html')) {
     localStorage.removeItem('imgDataOne');
-    localStorage.setItem('imgDataOne_TEMP', JSON.stringify(imgData));
+    localStorage.setItem('imgDataOne_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/pillow.jpg');
   }
 });
 
@@ -71,9 +61,9 @@ function updateImageRCCar() {
     window.location.pathname.endsWith('rcRaceCar_fiftyOff.html') ||
     window.location.pathname.endsWith('rcRaceCar_underTwo.html') ||
     window.location.pathname.endsWith('rcRaceCar_superDeals.html')) {
-    localStorage.setItem('imgDataTwo', 'http://127.0.0.1:5500/resources/images/rc-toy.jpg');
+    localStorage.setItem('imgDataTwo', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/rc-toy.jpg');
   } else {
-    localStorage.setItem('imgDataTwo', 'http://127.0.0.1:5500/resources/images/rc-toy.jpg');
+    localStorage.setItem('imgDataTwo', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/rc-toy.jpg');
   }
 }
 
@@ -85,7 +75,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('rcRaceCar_underTwo.html') ||
     window.location.pathname.endsWith('rcRaceCar_superDeals.html')) {
     localStorage.removeItem('imgDataTwo');
-    localStorage.setItem('imgDataTwo_TEMP', 'http://127.0.0.1:5500/resources/images/rc-toy.jpg');
+    localStorage.setItem('imgDataTwo_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/rc-toy.jpg');
   }
 });
 
@@ -99,9 +89,9 @@ function updateImageCamera() {
     window.location.pathname.endsWith('olympusCamera_fiftyOff.html') ||
     window.location.pathname.endsWith('olympusCamera_underTwo.html') ||
     window.location.pathname.endsWith('olympusCamera_superDeals.html')) {
-    localStorage.setItem('imgDataThree', 'http://127.0.0.1:5500/resources/images/olympus-camera.jpg');
+    localStorage.setItem('imgDataThree', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/olympus-camera.jpg');
   } else {
-    localStorage.setItem('imgDataThree', 'http://127.0.0.1:5500/resources/images/olympus-camera.jpg');
+    localStorage.setItem('imgDataThree', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/olympus-camera.jpg');
   }
 }
 
@@ -113,7 +103,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('olympusCamera_underTwo.html') ||
     window.location.pathname.endsWith('olympusCamera_superDeals.html')) {
     localStorage.removeItem('imgDataThree');
-    localStorage.setItem('imgDataThree_TEMP', 'http://127.0.0.1:5500/resources/images/olympus-camera.jpg');
+    localStorage.setItem('imgDataThree_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/olympus-camera.jpg');
   }
 });
 
@@ -127,9 +117,9 @@ function updateImagePotatoHead() {
     window.location.pathname.endsWith('mrPotatoHead_fiftyOff.html') ||
     window.location.pathname.endsWith('mrPotatoHead_underTwo.html') ||
     window.location.pathname.endsWith('mrPotatoHead_superDeals.html')) {
-    localStorage.setItem('imgDataFour', 'http://127.0.0.1:5500/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
   } else {
-    localStorage.setItem('imgDataFour', 'http://127.0.0.1:5500/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
   }
 }
 
@@ -141,7 +131,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('mrPotatoHead_underTwo.html') ||
     window.location.pathname.endsWith('mrPotatoHead_superDeals.html')) {
     localStorage.removeItem('imgDataFour');
-    localStorage.setItem('imgDataFour_TEMP', 'http://127.0.0.1:5500/resources/images/potatoHead.jpg');
+    localStorage.setItem('imgDataFour_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/potatoHead.jpg');
   }
 });
 
@@ -155,9 +145,9 @@ function updateImageMakeupOne() {
     window.location.pathname.endsWith('makeup_fiftyOff.html') ||
     window.location.pathname.endsWith('makeup_underTwo.html') ||
     window.location.pathname.endsWith('makeup_superDeals.html')) {
-    localStorage.setItem('imgDataFive', 'http://127.0.0.1:5500/resources/images/makeup-img.jpg');
+    localStorage.setItem('imgDataFive', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img.jpg');
   } else {
-    localStorage.setItem('imgDataFive', 'http://127.0.0.1:5500/resources/images/makeup-img.jpg');
+    localStorage.setItem('imgDataFive', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img.jpg');
   }
 }
 
@@ -169,7 +159,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('makeup_underTwo.html') ||
     window.location.pathname.endsWith('makeup_superDeals.html')) {
     localStorage.removeItem('imgDataFive');
-    localStorage.setItem('imgDataFive_TEMP', 'http://127.0.0.1:5500/resources/images/makeup-img.jpg');
+    localStorage.setItem('imgDataFive_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img.jpg');
   }
 });
 
@@ -183,9 +173,9 @@ function updateImageBeatsByDre() {
     window.location.pathname.endsWith('beatsbydre_fiftyOff.html') ||
     window.location.pathname.endsWith('beatsbydre_underTwo.html') ||
     window.location.pathname.endsWith('beatsbydre_superDeals.html')) {
-    localStorage.setItem('imgDataSix', 'http://127.0.0.1:5500/resources/images/beatsbydre.jpg');
+    localStorage.setItem('imgDataSix', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/beatsbydre.jpg');
   } else {
-    localStorage.setItem('imgDataSix', 'http://127.0.0.1:5500/resources/images/beatsbydre.jpg');
+    localStorage.setItem('imgDataSix', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/beatsbydre.jpg');
   }
 }
 
@@ -197,7 +187,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('beatsbydre_underTwo.html') ||
     window.location.pathname.endsWith('beatsbydre_superDeals.html')) {
     localStorage.removeItem('imgDataSix');
-    localStorage.setItem('imgDataSix_TEMP', 'http://127.0.0.1:5500/resources/images/beatsbydre.jpg');
+    localStorage.setItem('imgDataSix_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/beatsbydre.jpg');
   }
 });
 
@@ -211,9 +201,9 @@ function updateImageJBLspeaker() {
     window.location.pathname.endsWith('jblPartybox_fiftyOff.html') ||
     window.location.pathname.endsWith('jblPartybox_underTwo.html') ||
     window.location.pathname.endsWith('jblPartybox_superDeals.html')) {
-    localStorage.setItem('imgDataSeven', 'http://127.0.0.1:5500/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
   } else {
-    localStorage.setItem('imgDataSeven', 'http://127.0.0.1:5500/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
   }
 }
 
@@ -225,7 +215,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('jblPartybox_underTwo.html') ||
     window.location.pathname.endsWith('jblPartybox_superDeals.html')) {
     localStorage.removeItem('imgDataSeven');
-    localStorage.setItem('imgDataSeven_TEMP', 'http://127.0.0.1:5500/resources/images/jblSpeaker.jpg');
+    localStorage.setItem('imgDataSeven_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/jblSpeaker.jpg');
   }
 });
 
@@ -239,9 +229,9 @@ function updateImageSimonRabbit() {
     window.location.pathname.endsWith('simonRabbit_fiftyOff.html') ||
     window.location.pathname.endsWith('simonRabbit_underTwo.html') ||
     window.location.pathname.endsWith('simonRabbit_superDeals.html')) {
-    localStorage.setItem('imgDataEight', 'http://127\.0\.0\.1:5500/resources/images/simon-toy.png');
+    localStorage.setItem('imgDataEight', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/simon-toy.png');
   } else {
-    localStorage.setItem('imgDataEight', 'http://127\.0\.0\.1:5500/resources/images/simon-toy.png');
+    localStorage.setItem('imgDataEight', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/simon-toy.png');
   }
 }
 
@@ -253,7 +243,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('simonRabbit_underTwo.html') ||
     window.location.pathname.endsWith('simonRabbit_superDeals.html')) {
     localStorage.removeItem('imgDataEight');
-    localStorage.setItem('imgDataEight_TEMP', 'http://127\.0\.0\.1:5500/resources/images/simon-toy.png');
+    localStorage.setItem('imgDataEight_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/simon-toy.png');
   }
 });
 
@@ -267,9 +257,9 @@ function updateImageTruthHoodie() {
     window.location.pathname.endsWith('truthHoodie_fiftyOff.html') ||
     window.location.pathname.endsWith('truthHoodie_underTwo.html') ||
     window.location.pathname.endsWith('truthHoodie_superDeals.html')) {
-    localStorage.setItem('imgDataNine', 'http://127.0.0.1:5500/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
   } else {
-    localStorage.setItem('imgDataNine', 'http://127.0.0.1:5500/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
   }
 }
 
@@ -281,7 +271,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('truthHoodie_underTwo.html') ||
     window.location.pathname.endsWith('truthHoodie_superDeals.html')) {
     localStorage.removeItem('imgDataNine');
-    localStorage.setItem('imgDataNine_TEMP', 'http://127.0.0.1:5500/resources/images/truthHoodie.jpg');
+    localStorage.setItem('imgDataNine_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/truthHoodie.jpg');
   }
 });
 
@@ -295,9 +285,9 @@ function updateImageMakeupTwo() {
     window.location.pathname.endsWith('makeupTwo_fiftyOff.html') ||
     window.location.pathname.endsWith('makeupTwo_underTwo.html') ||
     window.location.pathname.endsWith('makeupTwo_superDeals.html')) {
-    localStorage.setItem('imgDataTen_TEMP', 'http://127.0.0.1:5500/resources/images/makeup-img-two.jpg');
+    localStorage.setItem('imgDataTen_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img-two.jpg');
   } else {
-    localStorage.setItem('imgDataTen', 'http://127.0.0.1:5500/resources/images/makeup-img-two.jpg');
+    localStorage.setItem('imgDataTen', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img-two.jpg');
   }
 }
 
@@ -309,7 +299,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('makeupTwo_underTwo.html') ||
     window.location.pathname.endsWith('makeupTwo_superDeals.html')) {
     localStorage.removeItem('imgDataTen');
-    localStorage.setItem('imgDataTen_TEMP', 'http://127.0.0.1:5500/resources/images/makeup-img-two.jpg');
+    localStorage.setItem('imgDataTen_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/makeup-img-two.jpg');
   }
 });
 
@@ -323,9 +313,9 @@ function updateImageDegreaser() {
     window.location.pathname.endsWith('automotiveDegreaser_fiftyOff.html') ||
     window.location.pathname.endsWith('automotiveDegreaser_underTwo.html') ||
     window.location.pathname.endsWith('automotiveDegreaser_superDeals.html')) {
-    localStorage.setItem('imgDataEleven_TEMP', 'http://127.0.0.1:5500/resources/images/automotiveDegreaser.jpg');
+    localStorage.setItem('imgDataEleven_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/automotiveDegreaser.jpg');
   } else {
-    localStorage.setItem('imgDataEleven', 'http://127.0.0.1:5500/resources/images/automotiveDegreaser.jpg');
+    localStorage.setItem('imgDataEleven', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/automotiveDegreaser.jpg');
   }
 }
 
@@ -337,7 +327,7 @@ document.getElementById('buy-now-wrap').addEventListener('click', function () {
     window.location.pathname.endsWith('automotiveDegreaser_underTwo.html') ||
     window.location.pathname.endsWith('automotiveDegreaser_superDeals.html')) {
     localStorage.removeItem('imgDataEleven');
-    localStorage.setItem('imgDataEleven_TEMP', 'http://127.0.0.1:5500/resources/images/automotiveDegreaser.jpg');
+    localStorage.setItem('imgDataEleven_TEMP', 'https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/automotiveDegreaser.jpg');
   }
 });
 
