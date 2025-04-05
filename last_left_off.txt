@@ -1,7 +1,20 @@
-4/1/25:
+4/5/25:
 
-I know why the image is not showing up when running the vercel app in shoppingcart for aliexpress-clone. It is because the ImgData key, for instance, is http://127.0.0.1:5500/resources/images/makeup-img-two.jpg.
+issues:
 
-If I put a random image url from a website it'll show on the shopping cart.
+1. "added" not working on product pages when clicking add-on icons
+2. the product titles links not working in checkout pages, etc.
+3. shall i fix the footer position in the checkout sections (look on aliepxress website for ideas)?
+4. clicking the "change" for the payment methods doesn't do anything, nor does the "change" for the shipping address
+5. fix the "Free returns" and "free shipping" by the products 
+6. the only value is subtotal, there is no total in the summary, nor is there any taxes. should i add a tax?
+7. why am i getting "nan" in the product pages "quantity" section?
 
-In other words, i need to figure out a way to change the imgData key so that the image key will run on vercel
+-------------
+
+
+4/3/25:
+
+look for anything in the webpage that might be an issue
+
+is it all broswer compatible?  YES. i checked
