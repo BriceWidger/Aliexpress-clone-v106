@@ -2,13 +2,14 @@
 
 issues:
 
-1. "added" not working on product pages when clicking add-on icons
+
 2. the product titles links not working in checkout pages, etc.
 3. shall i fix the footer position in the checkout sections (look on aliepxress website for ideas)?
 4. clicking the "change" for the payment methods doesn't do anything, nor does the "change" for the shipping address
 5. fix the "Free returns" and "free shipping" by the products 
 6. the only value is subtotal, there is no total in the summary, nor is there any taxes. should i add a tax?
 7. why am i getting "nan" in the product pages "quantity" section?
+8. when adding some of the products to the cart, the prices aren't accurate. for example, clicking row C "choice" add-on-icons do not match the prices in locastorge
 
 -------------
 
