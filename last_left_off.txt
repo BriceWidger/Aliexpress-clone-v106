@@ -2,13 +2,6 @@
 
 issues:
 
-
-2. the product titles links not working in checkout pages, etc.
-
-edit:
-so far i have the regualr link and the fifityoff links working but now i need it for the undertwo and superdeals. use thext text file" open link direct aliex-clone logic" for reference
-
-
 3. shall i fix the footer position in the checkout sections (look on aliepxress website for ideas)?
 4. clicking the "change" for the payment methods doesn't do anything, nor does the "change" for the shipping address
 5. fix the "Free returns" and "free shipping" by the products 
