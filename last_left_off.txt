@@ -2,7 +2,6 @@
 
 issues:
 
-3. shall i fix the footer position in the checkout sections (look on aliepxress website for ideas)?
 4. clicking the "change" for the payment methods doesn't do anything, nor does the "change" for the shipping address
 5. fix the "Free returns" and "free shipping" by the products 
 6. the only value is subtotal, there is no total in the summary, nor is there any taxes. should i add a tax?
