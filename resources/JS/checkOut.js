@@ -5,34 +5,48 @@ Prevents the product count elements (#productCountOne through #productCountEleve
 */
 
 function notBelowOne_checkOut() {
-    const words = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven'];
+  const words = [
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Eleven",
+  ];
 
-    words.forEach((word) => {
-        const id = `productCount${word}`;
-        document.getElementById(id).addEventListener('DOMSubtreeModified', function () {
-            const currentCount = parseInt(this.textContent);
-            if (currentCount < 1) {
-                this.textContent = 1;
-                localStorage.setItem(`count${word}`, 1);
-            }
-        });
-    });
+  words.forEach((word) => {
+    const id = `productCount${word}`;
+    document
+      .getElementById(id)
+      .addEventListener("DOMSubtreeModified", function () {
+        const currentCount = parseInt(this.textContent);
+        if (currentCount < 1) {
+          this.textContent = 1;
+          localStorage.setItem(`count${word}`, 1);
+        }
+      });
+  });
 }
 
 notBelowOne_checkOut();
 
 /**
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 /**
@@ -46,28 +60,83 @@ When a product count is 1 and the user clicks the plus icon (.quantity-plus-icon
 */
 
 function updateIconStyles_checkOut(productCount, minusIcon) {
-    minusIcon.style.opacity = parseInt(productCount.textContent) === 1 ? '0.5' : '1';
-    minusIcon.style.cursor = parseInt(productCount.textContent) === 1 ? 'not-allowed' : '';
+  minusIcon.style.opacity =
+    parseInt(productCount.textContent) === 1 ? "0.5" : "1";
+  minusIcon.style.cursor =
+    parseInt(productCount.textContent) === 1 ? "not-allowed" : "";
 }
 
-function initProductCount_checkOut(productCountId, plusIconClass, minusIconClass) {
-    const productCount = document.getElementById(productCountId);
-    const plusIcon = document.querySelector(`.${plusIconClass}`);
-    const minusIcon = document.querySelector(`.${minusIconClass}`);
+function initProductCount_checkOut(
+  productCountId,
+  plusIconClass,
+  minusIconClass
+) {
+  const productCount = document.getElementById(productCountId);
+  const plusIcon = document.querySelector(`.${plusIconClass}`);
+  const minusIcon = document.querySelector(`.${minusIconClass}`);
 
-    updateIconStyles_checkOut(productCount, minusIcon);
-    productCount.addEventListener('DOMSubtreeModified', () => updateIconStyles_checkOut(productCount, minusIcon));
+  updateIconStyles_checkOut(productCount, minusIcon);
+  productCount.addEventListener("DOMSubtreeModified", () =>
+    updateIconStyles_checkOut(productCount, minusIcon)
+  );
 
-    [plusIcon, minusIcon].forEach(icon => icon.addEventListener('click', () => updateIconStyles_checkOut(productCount, minusIcon)));
+  [plusIcon, minusIcon].forEach((icon) =>
+    icon.addEventListener("click", () =>
+      updateIconStyles_checkOut(productCount, minusIcon)
+    )
+  );
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const numbers = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven'];
-    const productCounts = numbers.map((number, index) => ({
-        id: `productCount${number}`,
-        plusIconClass: `quantity-plus-icons-radius-co-${number.toLowerCase()}`,
-        minusIconClass: `quantity-minus-icons-radius-co-${number.toLowerCase()}`,
-    }));
+document.addEventListener("DOMContentLoaded", () => {
+  const numbers = [
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Eleven",
+  ];
+  const productCounts = numbers.map((number, index) => ({
+    id: `productCount${number}`,
+    plusIconClass: `quantity-plus-icons-radius-co-${number.toLowerCase()}`,
+    minusIconClass: `quantity-minus-icons-radius-co-${number.toLowerCase()}`,
+  }));
 
-    productCounts.forEach(productCount => initProductCount_checkOut(productCount.id, productCount.plusIconClass, productCount.minusIconClass));
+  productCounts.forEach((productCount) =>
+    initProductCount_checkOut(
+      productCount.id,
+      productCount.plusIconClass,
+      productCount.minusIconClass
+    )
+  );
+
+  const subtotalElement = document.getElementById("multiplied-subtotal");
+  const shippingElement = document.querySelector(".summary-shipping-price");
+  const totalElement = document.getElementById("multiplied-total");
+
+  function updateTotalPriceCheckOut() {
+    const subtotal = parseFloat(subtotalElement.textContent) || 0;
+    const shipping =
+      shippingElement.textContent.trim().toLowerCase() === "free"
+        ? 0
+        : parseFloat(shippingElement.textContent) || 0;
+
+    const total = subtotal + shipping;
+    totalElement.textContent = total.toFixed(2);
+  }
+
+  // Initial calculation
+  updateTotalPriceCheckOut();
+
+  // Observe changes in subtotal and shipping price to update total price
+  const subtotalObserver = new MutationObserver(updateTotalPriceCheckOut);
+  subtotalObserver.observe(subtotalElement, { childList: true });
+
+  const shippingObserver = new MutationObserver(updateTotalPriceCheckOut);
+  shippingObserver.observe(shippingElement, { childList: true });
 });
