@@ -625,3 +625,25 @@ function updateCalculatedTax() {
 }
 
 updateCalculatedTax();
+
+/**
+ * Calculates and updates the tax and total for buyNow_checkOut.html.
+ */
+function calculateTaxAndTotalBuyNow() {
+  const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
+  const taxElement = document.getElementById("calculated-tax");
+  const totalElement = document.getElementById("multiplied-total");
+
+  if (subtotalElement && taxElement && totalElement) {
+    const subtotal = parseFloat(subtotalElement.textContent) || 0;
+    const taxRate = 8.875 / 100; // 8.875% tax rate
+    const tax = parseFloat((subtotal * taxRate).toFixed(2));
+    const total = parseFloat((subtotal + tax).toFixed(2));
+
+    taxElement.textContent = tax;
+    totalElement.textContent = total;
+  }
+}
+
+// Call the function when the page loads or when the subtotal changes
+document.addEventListener("DOMContentLoaded", calculateTaxAndTotalBuyNow);
