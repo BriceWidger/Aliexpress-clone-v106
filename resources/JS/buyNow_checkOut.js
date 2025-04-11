@@ -1667,3 +1667,54 @@ buyNow_shippingObserver.observe(
     childList: true,
   }
 );
+
+// Example: Update subtotal and trigger tax calculation
+function updateBuyNowSubtotal() {
+  const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
+  const keys = Object.keys(localStorage).filter((key) =>
+    key.includes("_price_buyNow_")
+  );
+  let subtotal = 0;
+  keys.forEach((key) => {
+    const value = parseFloat(localStorage.getItem(key));
+    if (!isNaN(value)) {
+      subtotal += value;
+    }
+  });
+  subtotalElement.textContent = subtotal.toFixed(2);
+
+  // Trigger tax and total calculation
+  calculateTaxAndTotalBuyNow();
+}
+
+// Call updateBuyNowSubtotal on page load
+document.addEventListener("DOMContentLoaded", updateBuyNowSubtotal);
+
+/**
+ * Calculates and updates the tax and total prices based on the current subtotal.
+ */
+function calculateTaxAndTotalBuyNow() {
+  const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
+  const taxElement = document.getElementById("calculated-tax");
+  const totalElement = document.getElementById("multiplied-total");
+
+  if (subtotalElement && taxElement && totalElement) {
+    const subtotal = parseFloat(subtotalElement.textContent) || 0;
+    const taxRate = 8.875 / 100; // 8.875% tax rate
+    const tax = parseFloat((subtotal * taxRate).toFixed(2));
+    const total = parseFloat((subtotal + tax).toFixed(2));
+
+    taxElement.textContent = tax;
+    totalElement.textContent = total;
+  }
+}
+
+// Observe changes in the subtotal to dynamically update tax and total prices
+const subtotalObserver = new MutationObserver(calculateTaxAndTotalBuyNow);
+subtotalObserver.observe(
+  document.getElementById("multiplied-subtotal_buyNow"),
+  { childList: true, subtree: true, characterData: true }
+);
+
+// Call calculateTaxAndTotalBuyNow on page load
+document.addEventListener("DOMContentLoaded", calculateTaxAndTotalBuyNow);
