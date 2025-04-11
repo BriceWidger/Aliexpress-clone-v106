@@ -166,6 +166,26 @@ a {
   text-align: center; /* Center-align the "Free" text */
 }
 
+.summary-list-tax-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0; /* Ensure equal spacing between subtotal and total */
+}
+
+.summary-tax-text {
+  font-size: 14px;
+  color: #222;
+  font-weight: 600;
+}
+
+.summary-tax-price {
+  font-size: 14px;
+  color: #222;
+  font-weight: 600;
+  text-align: center; /* Center-align the "0" text */
+}
+
 .cart-summary-list {
   margin: 0;
   padding: 0;
