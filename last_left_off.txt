@@ -3,6 +3,7 @@
 issues:
 
 6. the only value is subtotal, there is no total in the summary, nor is there any taxes. should i add a tax?
+7. products added the the "buyNow_checkOut.html" are being included in the shoppingCart.html and checkOut.html carts when they should only be in the buyNow_checkOut.html and not in the shoppingCart.html and checkOut.html sections
 8. when adding some of the products to the cart, the prices aren't accurate. for example, clicking row C "choice" add-on-icons do not match the prices in locastorge
 9. the product titles in the shoppingCart also need to direc tuser to product pages bsaed on their deals or non-deal prices (use the shoppingCart code as it basically is working for that page)
 11. when clicking on the add-on-icons on the product pages, the mouse does not stop being the pointer finger

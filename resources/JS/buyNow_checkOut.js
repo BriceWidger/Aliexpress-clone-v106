@@ -1718,3 +1718,19 @@ subtotalObserver.observe(
 
 // Call calculateTaxAndTotalBuyNow on page load
 document.addEventListener("DOMContentLoaded", calculateTaxAndTotalBuyNow);
+
+// Add event listener to update total price when tax or shipping changes
+document.addEventListener("DOMContentLoaded", () => {
+  const taxElement = document.getElementById("calculated-tax");
+  const shippingElement = document.querySelector(".summary-shipping-price");
+
+  if (taxElement) {
+    const taxObserver = new MutationObserver(buyNow_updateTotalPrice);
+    taxObserver.observe(taxElement, { childList: true });
+  }
+
+  if (shippingElement) {
+    const shippingObserver = new MutationObserver(buyNow_updateTotalPrice);
+    shippingObserver.observe(shippingElement, { childList: true });
+  }
+});
