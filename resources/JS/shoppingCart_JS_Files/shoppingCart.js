@@ -13,6 +13,24 @@ function noImgData_refreshToEmptyShoppingCart() {
 // call the function
 noImgData_refreshToEmptyShoppingCart();
 
+// Ensure _TEMP keys and NaN values are removed from localStorage on shoppingCart.html
+window.addEventListener("DOMContentLoaded", () => {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.includes("_TEMP") || localStorage.getItem(key) === "NaN") {
+      localStorage.removeItem(key);
+    }
+  });
+});
+
+// Ensure keys ending with _TEMP and having NaN as their value are removed from localStorage
+window.addEventListener("DOMContentLoaded", () => {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.endsWith("_TEMP") && localStorage.getItem(key) === "NaN") {
+      localStorage.removeItem(key);
+    }
+  });
+});
+
 /**
  *
  *

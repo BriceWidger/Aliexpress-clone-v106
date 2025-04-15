@@ -140,3 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const shippingObserver = new MutationObserver(updateTotalPriceCheckOut);
   shippingObserver.observe(shippingElement, { childList: true });
 });
+
+// Ensure keys ending with _TEMP and having NaN as their value are removed from localStorage
+window.addEventListener("DOMContentLoaded", () => {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.endsWith("_TEMP") && localStorage.getItem(key) === "NaN") {
+      localStorage.removeItem(key);
+    }
+  });
+});
