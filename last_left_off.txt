@@ -2,7 +2,7 @@
 
 issues:
 
-9. the product titles in the shoppingCart also need to direc tuser to product pages bsaed on their deals or non-deal prices (use the shoppingCart code as it basically is working for that page)
+9. the product titles in the checkOut & buyNow_checkOut pages also need to direc tuser to product pages bsaed on their deals or non-deal prices (use the shoppingCart code as it basically is working for that page)
 11. when clicking on the add-on-icons on the product pages, the mouse does not stop being the pointer finger
 
 -------------
