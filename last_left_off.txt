@@ -1,9 +1,8 @@
-4/5/25:
+4/17/25:
 
-issues:
+look for any issues in your code:
 
-9. the product titles in the checkOut & buyNow_checkOut pages also need to direc tuser to product pages bsaed on their deals or non-deal prices (use the shoppingCart code as it basically is working for that page)
-11. when clicking on the add-on-icons on the product pages, the mouse does not stop being the pointer finger
+1. see if you can fix it so when on the buyNow_checkOut page, when you click the back button then forward again the localstorage products remain
 
 -------------
 

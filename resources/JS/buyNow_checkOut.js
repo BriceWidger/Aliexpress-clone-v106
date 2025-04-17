@@ -1476,6 +1476,37 @@ noneTEMPkeys_displayNone_buyNow.forEach((productId) =>
   toggleCartProductDetails_buyNow(productId)
 );
 
+// Function to dynamically display products in the cart-list based on _TEMP keys
+function renderCartProducts_buyNow() {
+  noneTEMPkeys_displayNone_buyNow.forEach((product) => {
+    const imgDataTemp = localStorage.getItem(product.temp);
+    const cartProductDetails = document.querySelector(product.selector);
+    const cartProductImg = document.querySelector(`${product.selector} img`);
+
+    if (imgDataTemp && cartProductDetails && cartProductImg) {
+      cartProductDetails.style.display = "block"; // Show the product container
+      cartProductImg.src = imgDataTemp; // Set the image source
+    } else if (cartProductDetails) {
+      cartProductDetails.style.display = "none"; // Hide the product container
+    }
+  });
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", renderCartProducts_buyNow);
+
+// Update products when navigating back/forward to this page
+window.addEventListener("pageshow", () => {
+  renderCartProducts_buyNow();
+});
+
+// Force a reload when navigating back/forward to this page
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    window.location.reload();
+  }
+});
+
 /**
  *
  *
@@ -1733,4 +1764,184 @@ document.addEventListener("DOMContentLoaded", () => {
     const shippingObserver = new MutationObserver(buyNow_updateTotalPrice);
     shippingObserver.observe(shippingElement, { childList: true });
   }
+});
+
+// Save _TEMP keys to sessionStorage before leaving the page
+window.addEventListener("beforeunload", () => {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.endsWith("_TEMP")) {
+      sessionStorage.setItem(key, localStorage.getItem(key));
+    }
+  });
+});
+
+// Restore _TEMP keys from sessionStorage to localStorage on page load
+window.addEventListener("DOMContentLoaded", () => {
+  Object.keys(sessionStorage).forEach((key) => {
+    if (key.endsWith("_TEMP")) {
+      localStorage.setItem(key, sessionStorage.getItem(key));
+    }
+  });
+});
+
+// Restore _TEMP keys when navigating back/forward to this page
+window.addEventListener("pageshow", () => {
+  Object.keys(sessionStorage).forEach((key) => {
+    if (key.endsWith("_TEMP")) {
+      localStorage.setItem(key, sessionStorage.getItem(key));
+    }
+  });
+});
+
+// Function to update product counts dynamically
+function updateProductCounts_buyNow() {
+  const productCounts = [
+    { id: "productCountOne", tempKey: "countOne_TEMP" },
+    { id: "productCountTwo", tempKey: "countTwo_TEMP" },
+    { id: "productCountThree", tempKey: "countThree_TEMP" },
+    { id: "productCountFour", tempKey: "countFour_TEMP" },
+    { id: "productCountFive", tempKey: "countFive_TEMP" },
+    { id: "productCountSix", tempKey: "countSix_TEMP" },
+    { id: "productCountSeven", tempKey: "countSeven_TEMP" },
+    { id: "productCountEight", tempKey: "countEight_TEMP" },
+    { id: "productCountNine", tempKey: "countNine_TEMP" },
+    { id: "productCountTen", tempKey: "countTen_TEMP" },
+    { id: "productCountEleven", tempKey: "countEleven_TEMP" },
+  ];
+
+  productCounts.forEach(({ id, tempKey }) => {
+    const element = document.getElementById(id);
+    const count = localStorage.getItem(tempKey) || 1;
+    if (element) {
+      element.textContent = count;
+    }
+  });
+}
+
+// Function to update product prices dynamically
+function updateProductPrices_buyNow() {
+  const priceMappings = {
+    "cp-price-one": [
+      "pillow_price_buyNow_reg_TEMP",
+      "pillow_price_buyNow_fiftyOff_TEMP",
+      "pillow_price_buyNow_underTwo_TEMP",
+      "pillow_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-two": [
+      "car_price_buyNow_reg_TEMP",
+      "car_price_buyNow_fiftyOff_TEMP",
+      "car_price_buyNow_underTwo_TEMP",
+      "car_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-three": [
+      "camera_price_buyNow_reg_TEMP",
+      "camera_price_buyNow_fiftyOff_TEMP",
+      "camera_price_buyNow_underTwo_TEMP",
+      "camera_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-four": [
+      "potatoHead_price_buyNow_reg_TEMP",
+      "potatoHead_price_buyNow_fiftyOff_TEMP",
+      "potatoHead_price_buyNow_underTwo_TEMP",
+      "potatoHead_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-five": [
+      "makeupOne_price_buyNow_reg_TEMP",
+      "makeupOne_price_buyNow_fiftyOff_TEMP",
+      "makeupOne_price_buyNow_underTwo_TEMP",
+      "makeupOne_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-six": [
+      "beats_price_buyNow_reg_TEMP",
+      "beats_price_buyNow_fiftyOff_TEMP",
+      "beats_price_buyNow_underTwo_TEMP",
+      "beats_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-seven": [
+      "jbl_price_buyNow_reg_TEMP",
+      "jbl_price_buyNow_fiftyOff_TEMP",
+      "jbl_price_buyNow_underTwo_TEMP",
+      "jbl_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-eight": [
+      "simon_price_buyNow_reg_TEMP",
+      "simon_price_buyNow_fiftyOff_TEMP",
+      "simon_price_buyNow_underTwo_TEMP",
+      "simon_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-nine": [
+      "truth_price_buyNow_reg_TEMP",
+      "truth_price_buyNow_fiftyOff_TEMP",
+      "truth_price_buyNow_underTwo_TEMP",
+      "truth_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-ten": [
+      "makeupTwo_price_buyNow_reg_TEMP",
+      "makeupTwo_price_buyNow_fiftyOff_TEMP",
+      "makeupTwo_price_buyNow_underTwo_TEMP",
+      "makeupTwo_price_buyNow_superDeals_TEMP",
+    ],
+    "cp-price-eleven": [
+      "degreaser_price_buyNow_reg_TEMP",
+      "degreaser_price_buyNow_fiftyOff_TEMP",
+      "degreaser_price_buyNow_underTwo_TEMP",
+      "degreaser_price_buyNow_superDeals_TEMP",
+    ],
+  };
+
+  Object.keys(priceMappings).forEach((id) => {
+    const element = document.getElementById(id);
+    const prices = priceMappings[id].map((key) => localStorage.getItem(key));
+    const validPrice = prices.find((price) => price !== null);
+    if (element) {
+      element.textContent = validPrice || "0.00";
+    }
+  });
+}
+
+// Function to update subtotal, tax, and total dynamically
+function updateSummaryValues_buyNow() {
+  const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
+  const taxElement = document.getElementById("calculated-tax");
+  const totalElement = document.getElementById("multiplied-total");
+
+  // Calculate subtotal
+  const keys = Object.keys(localStorage).filter((key) =>
+    key.includes("_price_buyNow_")
+  );
+  let subtotal = 0;
+  keys.forEach((key) => {
+    const value = parseFloat(localStorage.getItem(key));
+    if (!isNaN(value)) {
+      subtotal += value;
+    }
+  });
+  subtotalElement.textContent = subtotal.toFixed(2);
+
+  // Calculate tax
+  const taxRate = 8.875 / 100; // 8.875% tax rate
+  const tax = parseFloat((subtotal * taxRate).toFixed(2));
+  taxElement.textContent = tax;
+
+  // Calculate total
+  const shippingElement = document.querySelector(".summary-shipping-price");
+  const shipping =
+    shippingElement.textContent.trim().toLowerCase() === "free"
+      ? 0
+      : parseFloat(shippingElement.textContent) || 0;
+  const total = subtotal + tax + shipping;
+  totalElement.textContent = total.toFixed(2);
+}
+
+// Update products, prices, and summary values when navigating back/forward to this page
+window.addEventListener("pageshow", () => {
+  updateProductCounts_buyNow();
+  updateProductPrices_buyNow();
+  updateSummaryValues_buyNow();
+});
+
+// Update products and prices when navigating back/forward to this page
+window.addEventListener("pageshow", () => {
+  updateProductCounts_buyNow();
+  updateProductPrices_buyNow();
 });
