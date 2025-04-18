@@ -1663,41 +1663,33 @@ function buyNow_prices_subtotal() {
 // Call the function
 buyNow_prices_subtotal();
 
-// Function to ensure total price is always the sum of subtotal and shipping price
+// Function to calculate and update the total price
 function buyNow_updateTotalPrice() {
   const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
-  const shippingElement = document.querySelector(".summary-shipping-price");
+  const taxElement = document.getElementById("calculated-tax");
   const totalElement = document.getElementById("multiplied-total");
 
   const subtotal = parseFloat(subtotalElement.textContent) || 0;
-  const shipping =
-    shippingElement.textContent.trim().toLowerCase() === "free"
-      ? 0
-      : parseFloat(shippingElement.textContent) || 0;
+  const tax = parseFloat(taxElement.textContent) || 0;
 
-  const total = subtotal + shipping;
+  const total = subtotal + tax;
   totalElement.textContent = total.toFixed(2);
 }
 
 // Call buyNow_updateTotalPrice on page load
 document.addEventListener("DOMContentLoaded", buyNow_updateTotalPrice);
 
-// Observe changes in subtotal and shipping price to update total price
+// Observe changes in subtotal and tax to update total price
 const buyNow_subtotalObserver = new MutationObserver(buyNow_updateTotalPrice);
 buyNow_subtotalObserver.observe(
   document.getElementById("multiplied-subtotal_buyNow"),
-  {
-    childList: true,
-  }
+  { childList: true }
 );
 
-const buyNow_shippingObserver = new MutationObserver(buyNow_updateTotalPrice);
-buyNow_shippingObserver.observe(
-  document.querySelector(".summary-shipping-price"),
-  {
-    childList: true,
-  }
-);
+const buyNow_taxObserver = new MutationObserver(buyNow_updateTotalPrice);
+buyNow_taxObserver.observe(document.getElementById("calculated-tax"), {
+  childList: true,
+});
 
 // Example: Update subtotal and trigger tax calculation
 function updateBuyNowSubtotal() {
