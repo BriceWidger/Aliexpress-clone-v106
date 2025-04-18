@@ -2,7 +2,7 @@
 
 look for any issues in your code:
 
-1. see if you can fix it so when on the buyNow_checkOut page, when you click the back button then forward again the localstorage products remain
+
 
 -------------
 
