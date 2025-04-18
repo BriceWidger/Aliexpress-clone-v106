@@ -1945,3 +1945,83 @@ window.addEventListener("pageshow", () => {
   updateProductCounts_buyNow();
   updateProductPrices_buyNow();
 });
+
+// Function to calculate and update multiplied-subtotal_buyNow in real time
+function updateMultipliedSubtotalBuyNow() {
+  const productCounts = [
+    { priceId: "cp-price-one", countId: "productCountOne" },
+    { priceId: "cp-price-two", countId: "productCountTwo" },
+    { priceId: "cp-price-three", countId: "productCountThree" },
+    { priceId: "cp-price-four", countId: "productCountFour" },
+    { priceId: "cp-price-five", countId: "productCountFive" },
+    { priceId: "cp-price-six", countId: "productCountSix" },
+    { priceId: "cp-price-seven", countId: "productCountSeven" },
+    { priceId: "cp-price-eight", countId: "productCountEight" },
+    { priceId: "cp-price-nine", countId: "productCountNine" },
+    { priceId: "cp-price-ten", countId: "productCountTen" },
+    { priceId: "cp-price-eleven", countId: "productCountEleven" },
+  ];
+
+  let subtotal = 0;
+
+  productCounts.forEach(({ priceId, countId }) => {
+    const priceElement = document.getElementById(priceId);
+    const countElement = document.getElementById(countId);
+
+    if (priceElement && countElement) {
+      const price = parseFloat(priceElement.textContent) || 0;
+      const count = parseInt(countElement.textContent) || 0;
+      subtotal += price * count;
+    }
+  });
+
+  const subtotalElement = document.getElementById("multiplied-subtotal_buyNow");
+  if (subtotalElement) {
+    subtotalElement.textContent = subtotal.toFixed(2);
+  }
+}
+
+// Observe changes in product counts and prices to update multiplied-subtotal_buyNow
+function observeBuyNowChanges() {
+  const productCounts = [
+    "productCountOne",
+    "productCountTwo",
+    "productCountThree",
+    "productCountFour",
+    "productCountFive",
+    "productCountSix",
+    "productCountSeven",
+    "productCountEight",
+    "productCountNine",
+    "productCountTen",
+    "productCountEleven",
+  ];
+
+  const priceIds = [
+    "cp-price-one",
+    "cp-price-two",
+    "cp-price-three",
+    "cp-price-four",
+    "cp-price-five",
+    "cp-price-six",
+    "cp-price-seven",
+    "cp-price-eight",
+    "cp-price-nine",
+    "cp-price-ten",
+    "cp-price-eleven",
+  ];
+
+  [...productCounts, ...priceIds].forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const observer = new MutationObserver(updateMultipliedSubtotalBuyNow);
+      observer.observe(element, { childList: true, subtree: true });
+    }
+  });
+}
+
+// Initialize real-time updates on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updateMultipliedSubtotalBuyNow();
+  observeBuyNowChanges();
+});
