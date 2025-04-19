@@ -118,12 +118,12 @@ a {
   color: rgb(51, 51, 51);
 }
 
-.summary-subtotal-text,
-.summary-total-text {
+.summary-subtotal-text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   word-wrap: normal;
+  font-size: 20px; /* Match .summary-total-price-span */
 }
 
 .summary-list-subtotal-price-wrap,
