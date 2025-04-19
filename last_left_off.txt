@@ -1,6 +1,8 @@
-4/17/25:
+4/19/25:
 
-look for any issues in your code:
+1. there is a problem when i add something to the checkout then i also add something to the buynow, when i go back to the checkout when i increase the productCount no math is happening
+
+2. when you add the same product to both buynow and to shoppingcart it gets deleted from shopping cart. fix this
 
 
 
