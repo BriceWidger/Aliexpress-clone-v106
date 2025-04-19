@@ -1727,8 +1727,8 @@ function calculateTaxAndTotalBuyNow() {
     const tax = parseFloat((subtotal * taxRate).toFixed(2));
     const total = parseFloat((subtotal + tax).toFixed(2));
 
-    taxElement.textContent = tax;
-    totalElement.textContent = total;
+    taxElement.textContent = tax.toFixed(2); // Ensure two decimal places
+    totalElement.textContent = total.toFixed(2);
   }
 }
 
