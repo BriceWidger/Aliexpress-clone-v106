@@ -196,10 +196,12 @@ function buyNowQuantity_defaultIs1() {
   ];
 
   products.forEach((product) => {
-    const count = localStorage.getItem(product.id) || 1;
-    document.getElementById(
-      `productCount${product.id.replace("count", "")}`
-    ).innerText = count;
+    const count = localStorage.getItem(product.id);
+    if (count !== null) {
+      document.getElementById(
+        `productCount${product.id.replace("count", "")}`
+      ).innerText = count;
+    }
   });
 }
 
@@ -675,7 +677,9 @@ productCountOne_buyNow.innerHTML = countOne;
 function updateCountOne() {
   const countOne = productCountOne_buyNow.textContent;
   const countOneValue = Math.max(1, parseInt(countOne));
-  localStorage.setItem("countOne_TEMP", countOneValue.toString());
+  if (!isNaN(countOneValue)) {
+    localStorage.setItem("countOne_TEMP", countOneValue.toString());
+  }
 }
 
 productCountOne_buyNow.addEventListener("DOMSubtreeModified", updateCountOne);
@@ -708,7 +712,9 @@ productCountTwo_buyNow.innerHTML = countTwo;
 function updateCountTwo() {
   const countTwo = productCountTwo_buyNow.textContent;
   const countTwoValue = Math.max(1, parseInt(countTwo));
-  localStorage.setItem("countTwo_TEMP", countTwoValue.toString());
+  if (!isNaN(countTwoValue)) {
+    localStorage.setItem("countTwo_TEMP", countTwoValue.toString());
+  }
 }
 
 productCountTwo_buyNow.addEventListener("DOMSubtreeModified", updateCountTwo);
@@ -741,7 +747,9 @@ productCountThree_buyNow.innerHTML = countThree;
 function updateCountThree() {
   const countThree = productCountThree_buyNow.textContent;
   const countThreeValue = Math.max(1, parseInt(countThree));
-  localStorage.setItem("countThree_TEMP", countThreeValue.toString());
+  if (!isNaN(countThreeValue)) {
+    localStorage.setItem("countThree_TEMP", countThreeValue.toString());
+  }
 }
 
 productCountThree_buyNow.addEventListener(
@@ -777,7 +785,9 @@ productCountFour_buyNow.innerHTML = countFour;
 function updateCountFour() {
   const countFour = productCountFour_buyNow.textContent;
   const countFourValue = Math.max(1, parseInt(countFour));
-  localStorage.setItem("countFour_TEMP", countFourValue.toString());
+  if (!isNaN(countFourValue)) {
+    localStorage.setItem("countFour_TEMP", countFourValue.toString());
+  }
 }
 
 productCountFour_buyNow.addEventListener("DOMSubtreeModified", updateCountFour);
@@ -810,7 +820,9 @@ productCountFive_buyNow.innerHTML = countFive;
 function updateCountFive() {
   const countFive = productCountFive_buyNow.textContent;
   const countFiveValue = Math.max(1, parseInt(countFive));
-  localStorage.setItem("countFive_TEMP", countFiveValue.toString());
+  if (!isNaN(countFiveValue)) {
+    localStorage.setItem("countFive_TEMP", countFiveValue.toString());
+  }
 }
 
 productCountFive_buyNow.addEventListener("DOMSubtreeModified", updateCountFive);
@@ -843,7 +855,9 @@ productCountSix_buyNow.innerHTML = countSix;
 function updateCountSix() {
   const countSix = productCountSix_buyNow.textContent;
   const countSixValue = Math.max(1, parseInt(countSix));
-  localStorage.setItem("countSix_TEMP", countSixValue.toString());
+  if (!isNaN(countSixValue)) {
+    localStorage.setItem("countSix_TEMP", countSixValue.toString());
+  }
 }
 
 productCountSix_buyNow.addEventListener("DOMSubtreeModified", updateCountSix);
@@ -876,7 +890,9 @@ productCountSeven_buyNow.innerHTML = countSeven;
 function updateCountSeven() {
   const countSeven = productCountSeven_buyNow.textContent;
   const countSevenValue = Math.max(1, parseInt(countSeven));
-  localStorage.setItem("countSeven_TEMP", countSevenValue.toString());
+  if (!isNaN(countSevenValue)) {
+    localStorage.setItem("countSeven_TEMP", countSevenValue.toString());
+  }
 }
 
 productCountSeven_buyNow.addEventListener(
@@ -912,7 +928,9 @@ productCountEight_buyNow.innerHTML = countEight;
 function updateCountEight() {
   const countEight = productCountEight_buyNow.textContent;
   const countEightValue = Math.max(1, parseInt(countEight));
-  localStorage.setItem("countEight_TEMP", countEightValue.toString());
+  if (!isNaN(countEightValue)) {
+    localStorage.setItem("countEight_TEMP", countEightValue.toString());
+  }
 }
 
 productCountEight_buyNow.addEventListener(
@@ -948,7 +966,9 @@ productCountNine_buyNow.innerHTML = countNine;
 function updateCountNine() {
   const countNine = productCountNine_buyNow.textContent;
   const countNineValue = Math.max(1, parseInt(countNine));
-  localStorage.setItem("countNine_TEMP", countNineValue.toString());
+  if (!isNaN(countNineValue)) {
+    localStorage.setItem("countNine_TEMP", countNineValue.toString());
+  }
 }
 
 productCountNine_buyNow.addEventListener("DOMSubtreeModified", updateCountNine);
@@ -981,7 +1001,9 @@ productCountTen_buyNow.innerHTML = countTen;
 function updateCountTen() {
   const countTen = productCountTen_buyNow.textContent;
   const countTenValue = Math.max(1, parseInt(countTen));
-  localStorage.setItem("countTen_TEMP", countTenValue.toString());
+  if (!isNaN(countTenValue)) {
+    localStorage.setItem("countTen_TEMP", countTenValue.toString());
+  }
 }
 
 productCountTen_buyNow.addEventListener("DOMSubtreeModified", updateCountTen);
@@ -1014,7 +1036,9 @@ productCountEleven_buyNow.innerHTML = countEleven;
 function updateCountEleven() {
   const countEleven = productCountEleven_buyNow.textContent;
   const countElevenValue = Math.max(1, parseInt(countEleven));
-  localStorage.setItem("countEleven_TEMP", countElevenValue.toString());
+  if (!isNaN(countElevenValue)) {
+    localStorage.setItem("countEleven_TEMP", countElevenValue.toString());
+  }
 }
 
 productCountEleven_buyNow.addEventListener(
@@ -1803,8 +1827,8 @@ function updateProductCounts_buyNow() {
 
   productCounts.forEach(({ id, tempKey }) => {
     const element = document.getElementById(id);
-    const count = localStorage.getItem(tempKey) || 1;
-    if (element) {
+    const count = localStorage.getItem(tempKey);
+    if (element && count !== null) {
       element.textContent = count;
     }
   });
