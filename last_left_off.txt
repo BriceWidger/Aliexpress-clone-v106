@@ -1,8 +1,6 @@
-4/19/25:
+4/20/25:
 
-1. there is a problem when i add something to the checkout then i also add something to the buynow, when i go back to the checkout when i increase the productCount no math is happening
-
-2. when you add the same product to both buynow and to shoppingcart it gets deleted from shopping cart. fix this
+1. noMatch.html needs to be looked over as some links, etc don't work
 
 
 
