@@ -1875,13 +1875,18 @@ a {
 }
 
 .header-items-container {
-  background-color: #191919;
-  height: 72px;
   display: flex;
-  align-items: center;
-  justify-content: end;
-  padding: 0 24px;
-  gap: 24px;
+  align-items: flex-end; /* Align items to the bottom for consistent alignment */
+  gap: 24px; /* Maintain spacing between items */
+}
+
+.header-items-container img {
+  vertical-align: middle; /* Ensure icons align with text */
+}
+
+.person-account-icon,
+.cart-check-out-white {
+  margin-bottom: 2px; /* Adjust margin to fine-tune alignment */
 }
 
 .american-flag-location-text,
@@ -1929,7 +1934,6 @@ h4 {
 .person-account-icon {
   width: 31px;
   height: 31px;
-  margin-right: 8px;
 }
 
 .cart-check-out-white {
