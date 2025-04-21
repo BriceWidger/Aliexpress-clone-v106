@@ -1,42 +1,48 @@
 // Search bar
 function search_items() {
-  let input = document.getElementById('search-bar').value
+  let input = document.getElementById("search-bar").value;
   input = input.toLowerCase();
-  let x = document.getElementsByClassName('search-item-names');
+  let x = document.getElementsByClassName("search-item-names");
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       x[i].style.display = "none";
-    }
-    else {
+    } else {
       x[i].style.display = "list-item";
     }
   }
 }
 
 // List toggle (search bar)
-const searchBar = document.querySelector('#search-bar');
-const searchList = document.querySelector('#search-list');
-searchBar.addEventListener('click', () => {
+const searchBar = document.querySelector("#search-bar");
+const searchList = document.querySelector("#search-list");
+searchBar.addEventListener("click", () => {
   searchList.style.display = "block";
 });
-const updateListState = e => {
+const updateListState = (e) => {
   const targetId = e.target.id;
-  if (targetId !== 'search-bar' && targetId !== 'search-list' && targetId !== 'search-bar-filler' && targetId !== 'search-bar-container' && targetId !== 'search-item-names' && targetId !== 'search-submit' && targetId !== 'search-submit-container') {
+  if (
+    targetId !== "search-bar" &&
+    targetId !== "search-list" &&
+    targetId !== "search-bar-filler" &&
+    targetId !== "search-bar-container" &&
+    targetId !== "search-item-names" &&
+    targetId !== "search-submit" &&
+    targetId !== "search-submit-container"
+  ) {
     searchList.style.display = "none";
   }
-}
-document.addEventListener('mousemove', updateListState);
+};
+document.addEventListener("mousemove", updateListState);
 
 // Letter search (search bar)
 function search_items() {
-  let input = document.getElementById('search-bar').value
+  let input = document.getElementById("search-bar").value;
   input = input.toLowerCase();
-  let x = document.getElementsByClassName('search-item-names');
+  let x = document.getElementsByClassName("search-item-names");
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       x[i].style.display = "none";
-    }
-    else {
+    } else {
       x[i].style.display = "list-item";
     }
   }
@@ -44,28 +50,35 @@ function search_items() {
 
 // Bold letters (search bar)
 function search_items() {
-  let input = document.getElementById('search-bar').value;
+  let input = document.getElementById("search-bar").value;
   input = input.toLowerCase();
-  let x = document.getElementsByClassName('search-item-names');
-  const regex = new RegExp(input, 'gi');
+  let x = document.getElementsByClassName("search-item-names");
+  const regex = new RegExp(input, "gi");
 
   for (let i = 0; i < x.length; i++) {
-    let originalText = x[i].getAttribute('data-original-text');
+    let originalText = x[i].getAttribute("data-original-text");
     if (!originalText) {
       originalText = x[i].textContent;
-      x[i].setAttribute('data-original-text', originalText);
+      x[i].setAttribute("data-original-text", originalText);
     }
     if (!originalText.toLowerCase().includes(input)) {
       x[i].style.display = "none";
     } else {
       x[i].style.display = "list-item";
-      const formattedText = originalText.replace(regex, match => `<b>${match}</b>`);
+      const formattedText = originalText.replace(
+        regex,
+        (match) => `<b>${match}</b>`
+      );
       x[i].innerHTML = formattedText;
 
       // Check if any two words are bold and match the search input
-      const boldWords = x[i].querySelectorAll('b');
-      if (boldWords.length >= 2 && boldWords[0].textContent.toLowerCase().includes(input) && boldWords[1].textContent.toLowerCase().includes(input)) {
-        const link = x[i].getAttribute('data-link');
+      const boldWords = x[i].querySelectorAll("b");
+      if (
+        boldWords.length >= 2 &&
+        boldWords[0].textContent.toLowerCase().includes(input) &&
+        boldWords[1].textContent.toLowerCase().includes(input)
+      ) {
+        const link = x[i].getAttribute("data-link");
         if (link) {
           reloadNewHTML(link);
         }
@@ -76,21 +89,22 @@ function search_items() {
 
 // Function to reload new HTML in a new window
 function reloadNewHTML(url) {
-  window.open(url, '_blank');
+  window.open(url, "_blank");
 }
 
 // Event listener for input event on search bar element
-document.getElementById('search-bar').addEventListener('input', function () {
-  if (this.value === '') {
-    search_items();
-  }
+document.getElementById("search-bar").addEventListener("input", function () {
+  const searchList = document.querySelector("#search-list");
+  searchList.style.display = "block"; // Ensure the search list is visible
+  search_items(); // Call the search_items function to update the list
 });
 
 // Removes whitespace from search input & opens html in new tab
-document.getElementById("search-submit-container").addEventListener("click", openLink);
+document
+  .getElementById("search-submit-container")
+  .addEventListener("click", openLink);
 
 function openLink() {
-
   var link = document.getElementById("search-bar").value;
   link = link.toLowerCase();
 
@@ -305,9 +319,7 @@ function openLink() {
     link == "rabbit"
   ) {
     reloadNewHTML("" + "/Item_Pages/simonRabbit.html");
-  }
-
-  else if (
+  } else if (
     link == "tr" ||
     link == "tru" ||
     link == "trut" ||
@@ -334,7 +346,7 @@ function openLink() {
   else {
     reloadNewHTML("" + "../../noMatch.html");
   }
-};
+}
 
 // Function to reload new HTML in the same window
 function reloadNewHTML(url) {
@@ -411,7 +423,7 @@ window.onscroll = function () {
     document.getElementById("whole-nav").style.top = "-200px";
   }
   prevScrollpos = currentScrollPos;
-}
+};
 
 // toggle sign-out notifications
 function signOut() {
@@ -438,23 +450,22 @@ function signIn() {
   } else {
     y.style.display = "none"; // hides sign-in
     w.style.display = "none"; // hides signed-out-text-notification
-
   }
 }
 
 /**
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 /**
- * 
- *When user clicks #sign-out the page refreshes to signIn.html. 
+ *
+ *When user clicks #sign-out the page refreshes to signIn.html.
  */
 
 // document.getElementById('sign-out').addEventListener('click', () => {
