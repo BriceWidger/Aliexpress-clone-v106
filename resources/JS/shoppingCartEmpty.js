@@ -16,27 +16,26 @@
  */
 
 function emptyCart_redirect() {
-    var cartNumber = document.getElementById('cart-number');
-    var triggerElements = [
-        document.querySelector('.cart-icon-text-checkout'),
-        document.querySelector('.cart-check-out-white'),
-        document.querySelector('.cart-number-cart-text-wrap'),
-        document.querySelector('.cart-text')
-    ];
+  var cartNumber = document.getElementById("cart-number");
+  var triggerElements = [
+    document.querySelector(".cart-icon-text-checkout"),
+    document.querySelector(".cart-check-out-white"),
+    document.querySelector(".cart-number-cart-text-wrap"),
+    document.querySelector(".cart-text"),
+  ];
 
-    triggerElements.forEach(function (element) {
-        element.addEventListener('click', function (event) {
-            if (cartNumber.textContent === '0' || cartNumber.textContent === '' || cartNumber.textContent === null) {
-                event.preventDefault();
-                window.location.href = '/shoppingCartEmpty.html';
-            }
-        });
+  triggerElements.forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      if (
+        cartNumber.textContent === "0" ||
+        cartNumber.textContent === "" ||
+        cartNumber.textContent === null
+      ) {
+        event.preventDefault();
+        window.location.href = "/shoppingCartEmpty.html";
+      }
     });
+  });
 }
 
 emptyCart_redirect();
-
-
-
-
-

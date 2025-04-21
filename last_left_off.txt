@@ -1,7 +1,10 @@
-4/20/25:
+4/21/25:
 
-1. noMatch.html needs to be looked over as some links, etc don't work. the upper-nav needs work
+1. the position of the drop downs for shoppingCrt.html and noMatch.html need to be psitioned better
 
+2. when noMatch.html has no items in cart it goes to empty shopping cart page when it shouldn't
+
+3. also, if the search bar is empty and the user submits, then nothing should happen. currently if it's empty and the user submits it takes to noMatch.html page, which it shouldn't.
 
 
 -------------
