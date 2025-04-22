@@ -40,6 +40,84 @@ window.addEventListener("DOMContentLoaded", () => {
  *
  */
 
+// Process TEMP keys immediately
+const countKeys = [
+  "countOne",
+  "countTwo",
+  "countThree",
+  "countFour",
+  "countFive",
+  "countSix",
+  "countSeven",
+  "countEight",
+  "countNine",
+  "countTen",
+  "countEleven",
+];
+
+countKeys.forEach((countKey) => {
+  const tempKey = `${countKey}_TEMP`;
+  if (localStorage.getItem(tempKey) !== null) {
+    const tempValue = localStorage.getItem(tempKey);
+    if (!isNaN(tempValue) && parseInt(tempValue) >= 1) {
+      localStorage.setItem(countKey, tempValue); // Update main key with TEMP value
+    }
+    localStorage.removeItem(tempKey); // Remove TEMP key
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const countElements = [
+    "productCountOne",
+    "productCountTwo",
+    "productCountThree",
+    "productCountFour",
+    "productCountFive",
+    "productCountSix",
+    "productCountSeven",
+    "productCountEight",
+    "productCountNine",
+    "productCountTen",
+    "productCountEleven",
+  ];
+
+  // Initialize or restore counts from localStorage
+  countElements.forEach((id, index) => {
+    const countKey = countKeys[index];
+    let storedCount = localStorage.getItem(countKey);
+
+    if (storedCount === null || isNaN(storedCount) || storedCount === "") {
+      // Initialize count in localStorage if it doesn't exist or is invalid
+      storedCount = "1";
+      localStorage.setItem(countKey, storedCount);
+    }
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = storedCount;
+    }
+  });
+
+  // Observe changes to update localStorage
+  countElements.forEach((id, index) => {
+    const countKey = countKeys[index];
+    const element = document.getElementById(id);
+    if (element) {
+      const observer = new MutationObserver(() => {
+        const newValue = element.textContent;
+        if (!isNaN(newValue) && parseInt(newValue) >= 1) {
+          localStorage.setItem(countKey, newValue);
+        }
+      });
+      observer.observe(element, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+      });
+    }
+  });
+});
+
 // localStorage; 1 cart item per product ensured
 function clickCounter(product) {
   if (typeof Storage !== "undefined") {
