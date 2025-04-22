@@ -426,25 +426,14 @@ document.getElementById("buy-now-wrap").addEventListener("click", function () {
 // Degreaser
 var preventUpdateImageDegreaser = false;
 
+// Function to handle "Add to cart" for automotiveDegreaser_fiftyOff
 function updateImageDegreaser() {
-  if (preventUpdateImageDegreaser) return;
+  const degreaserImgSrc = document.getElementById(
+    "localStorageImg-Degreaser"
+  ).src;
 
-  if (
-    window.location.pathname.endsWith("automotiveDegreaser.html") ||
-    window.location.pathname.endsWith("automotiveDegreaser_fiftyOff.html") ||
-    window.location.pathname.endsWith("automotiveDegreaser_underTwo.html") ||
-    window.location.pathname.endsWith("automotiveDegreaser_superDeals.html")
-  ) {
-    localStorage.setItem(
-      "imgDataEleven_TEMP",
-      "https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/automotiveDegreaser.jpg"
-    );
-  } else {
-    localStorage.setItem(
-      "imgDataEleven",
-      "https://raw.githubusercontent.com/BriceWidger/Aliexpress-clone-v106/refs/heads/main/resources/images/automotiveDegreaser.jpg"
-    );
-  }
+  // Update localStorage with the correct key
+  localStorage.setItem("imgDataEleven", degreaserImgSrc); // Use imgDataEleven instead of imgDataEleven_TEMP
 }
 
 document.getElementById("buy-now-wrap").addEventListener("click", function () {
