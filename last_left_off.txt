@@ -1,6 +1,6 @@
 4/21/25:
 
-1. the position of the drop downs for shoppingCrt.html and noMatch.html need to be psitioned better
+1. the position of the drop downs for shoppingCrt.html and noMatch.html, shoppingCartEmpty.html need to be psitioned better
 
 2. when noMatch.html has no items in cart it goes to empty shopping cart page when it shouldn't
 
