@@ -1,8 +1,6 @@
 4/21/25:
 
-1. when i type an unkown product into the search bar, what i type is not always in the "quotes" on the noMatch.html page.where it is not working: shoppingCart, 
 
-2. when noMatch.html has no items in cart it goes to empty shopping cart page when it shouldn't
 
 3. also, if the search bar is empty and the user submits, then nothing should happen. currently if it's empty and the user submits it takes to noMatch.html page, which it shouldn't.
 

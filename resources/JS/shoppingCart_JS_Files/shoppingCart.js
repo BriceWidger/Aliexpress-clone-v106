@@ -1,5 +1,8 @@
 // If no keys with imgData in their names in local storage, refresh page to shoppingCartEmpty.html
 function noImgData_refreshToEmptyShoppingCart() {
+  if (window.location.pathname.endsWith("noMatch.html")) {
+    return; // Do not redirect if on noMatch.html
+  }
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     if (key.includes("imgData")) {
