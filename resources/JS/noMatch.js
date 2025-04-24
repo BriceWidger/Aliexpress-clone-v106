@@ -30,7 +30,14 @@ window.addEventListener("load", function () {
 document.getElementById("search-submit").addEventListener("click", function () {
   var searchText_noMatch = document
     .getElementById("search-bar")
-    .value.toLowerCase();
+    .value.trim()
+    .toLowerCase();
+
+  if (!searchText_noMatch) {
+    // Do nothing if the search bar is empty
+    return;
+  }
+
   localStorage.setItem("searchText", searchText_noMatch);
 
   // Check if the search matches any product
@@ -56,7 +63,13 @@ document
   .getElementById("search-bar")
   .addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-      var searchText_noMatch = this.value.toLowerCase();
+      var searchText_noMatch = this.value.trim().toLowerCase();
+
+      if (!searchText_noMatch) {
+        // Do nothing if the search bar is empty
+        return;
+      }
+
       localStorage.setItem("searchText", searchText_noMatch);
 
       // Check if the search matches any product

@@ -105,8 +105,12 @@ document
   .addEventListener("click", openLink);
 
 function openLink() {
-  var link = document.getElementById("search-bar").value;
-  link = link.toLowerCase();
+  var link = document.getElementById("search-bar").value.trim().toLowerCase();
+
+  if (!link) {
+    // Do nothing if the search bar is empty
+    return;
+  }
 
   // Automotive Degreaser
   if (
