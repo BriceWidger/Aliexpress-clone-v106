@@ -1,9 +1,5 @@
 4/21/25:
 
-
-
-3. also, if the search bar is empty and the user submits, then nothing should happen. currently if it's empty and the user submits it takes to noMatch.html page, which it shouldn't.
-
 4. when i'm on the shoppingCarEmpty.html page and type an unknown product into the sarch bar it takes me to shoppingCartEmpty instead of noMatch
 
 
