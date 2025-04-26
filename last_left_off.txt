@@ -1,6 +1,6 @@
 4/24/25:
 
-
+1. possibly put a footer at each page 
 
 
 -------------
