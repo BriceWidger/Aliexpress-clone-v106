@@ -1603,6 +1603,14 @@ h4 {
   padding: 8px 0px;
 }
 
+.footer-bottom-text {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 43.8px;
+  margin: 0;
+}
+
 /* CAROUSEL REFERENCE: https://webdesign.tutsplus.com/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734t */
 /*CAROUSEL*/
 .slider-wrapper {
